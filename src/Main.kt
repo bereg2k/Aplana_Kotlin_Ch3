@@ -22,14 +22,12 @@ fun main(args: Array<String>) {
 /**
  * Функция, которая выводит в консоль информацию сотрудника.
  * Принимает на вход и выводит:
- * ФИО, Возраст, Семейное положение и Должность
+ * ФИО и Должность
  */
-fun printEmployeeInfo(fio: String, age: Int, maritalStatus: String, position: String) {
+fun printEmployeeInfo(fio: String, position: String) {
     println("Информация по сотруднику.")
-    println("ФИО:                   $fio")
-    println("Возраст:               $age")
-    println("Семейное положение:    $maritalStatus")
-    println("Должность:             $position")
+    println("ФИО:       $fio")
+    println("Должность: $position")
     println()
 }
 
@@ -46,17 +44,6 @@ fun printEmployeeInfo(fio: String, age: Int, position: String) {
     println()
 }
 
-/**
- * Функция, которая выводит в консоль информацию сотрудника.
- * Принимает на вход и выводит:
- * ФИО и Должность
- */
-fun printEmployeeInfo(fio: String, position: String) {
-    println("Информация по сотруднику.")
-    println("ФИО:       $fio")
-    println("Должность: $position")
-    println()
-}
 
 /**
  * Функция, которая выводит в консоль информацию сотрудника.
@@ -66,6 +53,20 @@ fun printEmployeeInfo(fio: String, position: String) {
 fun printEmployeeInfo(fio: String, maritalStatus: String, position: String) {
     println("Информация по сотруднику.")
     println("ФИО:                   $fio")
+    println("Семейное положение:    $maritalStatus")
+    println("Должность:             $position")
+    println()
+}
+
+/**
+ * Функция, которая выводит в консоль информацию сотрудника.
+ * Принимает на вход и выводит:
+ * ФИО, Возраст, Семейное положение и Должность
+ */
+fun printEmployeeInfo(fio: String, age: Int, maritalStatus: String, position: String) {
+    println("Информация по сотруднику.")
+    println("ФИО:                   $fio")
+    println("Возраст:               $age")
     println("Семейное положение:    $maritalStatus")
     println("Должность:             $position")
     println()
