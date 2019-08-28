@@ -1,73 +1,35 @@
-/** Задание 14: Инфо сотрудника
- * Напишите функцию, которая выводит в консоль информацию сотрудника (ФИО, Возраст, Должность и Семейное положение).
- * С помощью перегрузки функции, сделайте варианты, когда известны только:
- * - ФИО и Должность
- * - ФИО, Возраст и Должность
- * - ФИО, Семейное положение и Должность
- * - ФИО, Возраст, Семейное положение и Должность
+/** Задание 15: Лямбда
+ * Создайте переменную, которая содержит лямбда выражение для вывода в консоль данных массива типа String.
  */
 fun main(args: Array<String>) {
 
-    // - ФИО и Должность
-    printEmployeeInfo("Нил Армстронг", "Командир основного модуля")
-    // - ФИО, Возраст и Должность
-    printEmployeeInfo("Майкл Коллинз", 39, "Пилот командного модуля")
-    // - ФИО, Семейное положение и Должность
-    printEmployeeInfo("Эдвин Олдрин", "Женат", "Пилот лунного модуля")
-    // - ФИО, Возраст, Семейное положение и Должность
-    printEmployeeInfo("Джеймс Ловелл", 41, "Женат", "Командир дублирующего модуля")
+    // Реализация лямбда-выражения печати массива в виде пронумерованного списка
+    val printStringArrayNumbered = { array: Array<String> ->
+        println("Печать строкового массива в виде пронумерованного списка: ")
+        var counter = 1
+        for (i in array) {
+            println("$counter. $i")
+            counter++
+        }
+        println()
+    }
 
-}
+    // Реализация лямбда-выражения печати массива в виде последовательности в скобках
+    val printStringArrayBrackets = { array: Array<String> ->
+        println("Печать строкового массива в виде последовательности в скобках: ")
 
-/**
- * Функция, которая выводит в консоль информацию сотрудника.
- * Принимает на вход и выводит:
- * ФИО и Должность
- */
-fun printEmployeeInfo(fio: String, position: String) {
-    println("Информация по сотруднику.")
-    println("ФИО:       $fio")
-    println("Должность: $position")
-    println()
-}
+        print("[")
+        for (i in array.indices) {
+            if (i != array.lastIndex) {
+                print("${array[i]}, ")
+            } else {
+                print(array[i])
+            }
+        }
+        println("]")
+    }
 
-/**
- * Функция, которая выводит в консоль информацию сотрудника.
- * Принимает на вход и выводит:
- * ФИО, Возраст и Должность
- */
-fun printEmployeeInfo(fio: String, age: Int, position: String) {
-    println("Информация по сотруднику.")
-    println("ФИО:       $fio")
-    println("Возраст:   $age")
-    println("Должность: $position")
-    println()
-}
-
-
-/**
- * Функция, которая выводит в консоль информацию сотрудника.
- * Принимает на вход и выводит:
- * ФИО, Семейное положение и Должность
- */
-fun printEmployeeInfo(fio: String, maritalStatus: String, position: String) {
-    println("Информация по сотруднику.")
-    println("ФИО:                   $fio")
-    println("Семейное положение:    $maritalStatus")
-    println("Должность:             $position")
-    println()
-}
-
-/**
- * Функция, которая выводит в консоль информацию сотрудника.
- * Принимает на вход и выводит:
- * ФИО, Возраст, Семейное положение и Должность
- */
-fun printEmployeeInfo(fio: String, age: Int, maritalStatus: String, position: String) {
-    println("Информация по сотруднику.")
-    println("ФИО:                   $fio")
-    println("Возраст:               $age")
-    println("Семейное положение:    $maritalStatus")
-    println("Должность:             $position")
-    println()
+    val stringArray = arrayOf("Eat", "Code", "Sleep", "Repeat")
+    printStringArrayNumbered(stringArray)
+    printStringArrayBrackets(arrayOf("One", "Two", "Three", "Four", "Five"))
 }
